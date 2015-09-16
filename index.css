@@ -1,11 +1,5 @@
-* { 
-}
-
-body { 
-	margin: 0 auto;
-}
-
 header { 
+	margin: 0 auto;
 	z-index: 1000;
 	position: fixed;
 	background-color: white;
@@ -13,36 +7,36 @@ header {
 	height: 123px;
 }
 
-img.logo { 
+header img.logo { 
 	width: 200px;
 	height: auto;
 	padding: 14px 0px 0px 27px;
 	margin: 0;
 }
 
-svg { 
+header svg { 
 	width: 41px;
 	height: auto;
 	float: right;
 	padding: 14px 27px 0px 0px;
 }
 
-div.logo_calendar { 
+header div.logo_calendar { 
 	display: inline;	
 }
 
-div.description { 
+header div.description { 
 	margin: 0;	
 }
 
-p.description { 
+header p.description { 
 	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;	
 	padding-left: 27px;
 	margin: 0;
 	color: #d7552d;
 }
 
-.calendar { 
+header .calendar { 
 	fill: #65408b;
 }
 
