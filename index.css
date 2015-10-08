@@ -1,42 +1,71 @@
-header { 
-	margin: 0 auto;
-	z-index: 1000;
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* ~*~*~*~*~*~*~*~*~*~*~*~
+tech@NYU universal header
+version 1.0.0 * https://github.com/TechAtNYU/universal-header
+- - -
+colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/colors
+~*~*~*~*~*~*~*~*~*~*~*~ */
+
+.uniheader { 
+	box-sizing: border-box;
+	margin: 0;
 	position: fixed;
-	background-color: white;
+	z-index: 10;
 	width: 100%;
-	padding-bottom: 13px;
-}
-
-header img.logo { 
-	width: 200px;
-	height: auto;
-	padding: 14px 0px 0px 27px;
-	margin: 0;
-}
-
-header svg { 
-	width: 28px;
-	height: auto;
-	float: right;
-	padding: 14px 27px 0px 0px;
-}
-
-header div.logo_calendar { 
-	display: inline;	
-}
-
-header div.description { 
-	margin: 0;	
-}
-
-header p.description { 
+	padding: 10px 20px;
 	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;	
-	padding: 0px 27px;
-	margin: 0;
-	color: #d7552d;
+	background-color: #d7552d; /* flame pea / orange */
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
 }
 
-header .calendar { 
-	fill: #65408b;
+/* left side */
+.uniheader__main {
+	width: 80%;
+	float: left;
+}
+.uniheader .uniheader__logo { 
+	height: 50px;
+}
+.uniheader__description, .uniheader__title {
+	font-size: 16px;
+}
+.uniheader__title {
+	text-transform: uppercase;
+	border-top: 1px solid #65408b;
+}
+.uniheader__nav li {
+	display: inline-block;
+	list-style: none;
+}
+.uniheader__spacer {
+	width: 30px;
 }
 
+/* right side */
+.uniheader__meta {
+	float: right;
+	width: 20%;
+	text-align: right;
+}
+.uniheader__calendar-icon {
+	width: 50px;
+	height: 50px;
+}
+.uniheader__calendar-icon .calendar {
+	fill: #65408b; /* affair / purple */
+}
+
+
+.sample__article {
+	width: 50%;
+	margin: auto;
+	font-size: 2em;
+}
+.sample__article p {
+	line-height: 1.25;
+	margin: 0.5em 0;
+}
