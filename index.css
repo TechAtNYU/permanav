@@ -10,19 +10,26 @@ version 1.0.0 * https://github.com/TechAtNYU/universal-header
 colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/colors
 ~*~*~*~*~*~*~*~*~*~*~*~ */
 
-.uniheader__wrapper {
+.universal-section__reset {
 	box-sizing: border-box;
+	width: 100%;
+	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;	
+}
+
+.uniheader__wrapper {
 	position: fixed;
 	z-index: 10;
-	width: 100%;
-	background-color: #EEEEEE; /* old brick / red */
+	background-color: rgba(255, 255, 255, .95);
 	box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
 }
+
+/* ~~~~~~~
+// PRIMARY HEADER 
+~~~~~~~~~~ */
 
 .uniheader__primary { 
 	margin: 0;
 	padding: 8px 20px 0;
-	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;	
 	background-color: #d7552d; /* flame pea / orange */
 	min-height: 64px;
 	vertical-align: middle;
@@ -34,7 +41,6 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 .uniheader__primary a {
 	text-decoration: none;
 	color: black;
-	background-color: red;
 }
 
 /* left side */
@@ -70,6 +76,29 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 }
 .uniheader__calendar-icon .calendar {
 	fill: #65408b; /* affair / purple */
+}
+
+/* ~~~~~~~
+// SECONDARY HEADER 
+~~~~~~~~~~ */
+
+.uniheader__secondary {
+	height: 30em;
+}
+.uh-secondary__information {
+	width: 60%;
+	float: left;
+}
+.uh-secondary__events {
+	width: 40%;
+	float: left;
+}
+.uh-secondary__information > div,
+.uh-secondary__events > div {
+	padding: 8px 20px;
+}
+.uh-secondary__about, .uh-secondary__minical {
+	height: 18em;
 }
 
 
