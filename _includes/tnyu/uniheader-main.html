@@ -23,6 +23,7 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 	background-color: #d7552d; /* flame pea / orange */
 	min-height: 64px;
 	vertical-align: middle;
+	border-bottom: 2px solid #65408B;
 }
 .uniheader__primary a, .uniheader__logo, .uniheader__calendar-icon {
 	height: 48px;
@@ -53,6 +54,10 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 .uniheader__title {
 	padding-left: 4px;
 }
+.uniheader--special {
+	padding-bottom: 6px;
+	border-bottom: 2px solid black;
+}
 
 /* right side */
 .uniheader__meta {
@@ -74,18 +79,7 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 
 .uniheader__secondary {
 	height: 30em;
-}
-.uh-secondary__information {
-	width: 60%;
-	float: left;
-}
-.uh-secondary__events {
-	width: 40%;
-	float: left;
-}
-.uh-secondary__information > div,
-.uh-secondary__events > div {
-	padding: 8px 20px;
+	/* display: none; /* temporary */
 }
 .uh-secondary__about, .uh-secondary__minical {
 	height: 18em;
@@ -97,7 +91,13 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 	<header class="uniheader__primary" id="top">
 		<div class="uniheader__about">
 			<a href="http://www.techatnyu.org"><img src="http://nyusw.com/lib/logos/techatnyu.png" alt="tech@nyu logo" class="uniheader__logo"/></a>
-			<h1 class="uniheader__title">// {{page.title}}</h1>
+			<h1 class="uniheader__title">// 
+				{% if page.specialmsg %}
+					<span class="uniheader--special">{!} <a href="{{page.speciallink}}">{{page.specialmsg}}</a></span>
+				{% else %}
+					{{page.title}}
+				{% endif %}
+			</h1>
 		</div>
 		<div class="uniheader__meta">
 			<a href="#" id="uniheaderSecondary">
@@ -115,7 +115,7 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 	</header>
 
 	<header class="uniheader__secondary">
-		<section class="uh-secondary__information">
+		<section class="uh-secondary__information universal-section--primary">
 			<div class="uh-secondary__about">
 				<h1>About tech@NYU</h1>
 				<blockquote>We are NYC’s largest student-run organization of hackers, designers and builders. We host events that unite students and help them make stuff.</blockquote>
@@ -136,7 +136,7 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 			<button>http://jobsatnyu.com/</button>
 			</div>
 		</section>
-		<section class="uh-secondary__events">
+		<section class="uh-secondary__events universal-section--secondary">
 			<div class="uh-secondary__minical">
 				<h1>Temporary Mini Calendar</h1>
 			</div>

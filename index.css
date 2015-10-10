@@ -6,13 +6,23 @@
 
 
 .universal-section__reset {
+	clear: both;
 	box-sizing: border-box;
 	width: 100%;
 	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;	
 }
 
-
-
+.universal-section--primary, .universal-section--secondary {
+	float: left;
+	box-sizing: border-box;
+	padding: 8px 20px;
+}
+.universal-section--primary {
+	width: 60%;
+}
+.universal-section--secondary {
+	width: 40%;
+}
 
 .sample__article {
 	width: 50%;
