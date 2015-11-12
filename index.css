@@ -9,7 +9,10 @@
 	clear: both;
 	box-sizing: border-box;
 	width: 100%;
-	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;	
+	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;
+}
+input[type="text"] {
+	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;
 }
 
 .universal-section--primary, .universal-section--secondary {
@@ -19,9 +22,26 @@
 }
 .universal-section--primary {
 	width: 60%;
+	min-width: 400px;
 }
 .universal-section--secondary {
 	width: 40%;
+	min-width: 400px;
+}
+.universal__copy, .universal-section__reset p {
+	line-height: 1.25;
+	margin: 0.5em 0;
+}
+.universal-section__reset blockquote {
+	font-size: 125%;
+}
+.universal__button {
+	padding: 5px 10px;
+	border-bottom: 2px solid black;
+	border-radius: 6px;
+	text-decoration: none;
+	background-color: #65408b; /* temp */
+	color: white;
 }
 
 .sample__article {

@@ -25,18 +25,28 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 	vertical-align: middle;
 	border-bottom: 2px solid #65408B;
 }
-.uniheader__primary a, .uniheader__logo, .uniheader__calendar-icon {
+
+.uniheader__primary ::-webkit-input-placeholder {
+   color: #911E1C;
+}
+.uniheader__primary :-moz-placeholder { /* Firefox 18- */
+   color: #911E1C;  
+}
+.uniheader__primary ::-moz-placeholder {  /* Firefox 19+ */
+   color: #911E1C;  
+}
+.uniheader__primary :-ms-input-placeholder {  
+   color: #911E1C;  
+}
+
+.uniheader__homelink, .uniheader__logo, .uniheader__calendar-icon {
 	height: 48px;
 	display: inline-block;
-}
-.uniheader__primary a {
-	text-decoration: none;
-	color: black;
 }
 
 /* left side */
 .uniheader__about {
-	width: 80%;
+	width: 60%;
 	float: left;
 }
 .uniheader__logo, .uniheader__title, .uniheader__plusplus {
@@ -46,23 +56,34 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 	font-size: 24px;
 	text-transform: uppercase;
 	position: relative;
-	top: -18px;
 }
 .uniheader__plusplus {
 	left: -8px;
+	top: -18px;
 }
 .uniheader__title {
 	padding-left: 4px;
+	top: 0px;
+	height: 40px;
+	width: 74%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
 }
-.uniheader--special {
+.uniheader__special {
 	padding-bottom: 6px;
 	border-bottom: 2px solid black;
+}
+.uniheader__special-link {
+	color: black;
+	text-decoration: none;
 }
 
 /* right side */
 .uniheader__meta {
 	float: right;
-	width: 20%;
+	width: 38%;
 	text-align: right;
 }
 .uniheader__calendar-icon {
@@ -72,6 +93,26 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 .uniheader__calendar-icon .calendar {
 	fill: #65408b; /* affair / purple */
 }
+.uniheader__newslettersub {
+	width: 20%;
+	float: left;
+	background-color: transparent;
+	border: none;
+	padding: 14px 5px 24px;
+	background-color: rgba(255,255,255,0.1);
+	font-size: 16px;
+}
+.uniheader__newslettersub:focus {
+	background-color: rgba(255,255,255,0.5);
+	outline: none;
+}
+
+.tempCAL {
+	width: 100%;
+	border: 2px solid black;
+	height: 230px;
+}
+
 
 /* ~~~~~~~
 // SECONDARY HEADER 
@@ -90,16 +131,18 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 <!-- UNIVERSAL HEADER 0.1.0 -->
 	<header class="uniheader__primary" id="top">
 		<div class="uniheader__about">
-			<a href="http://www.techatnyu.org"><img src="http://nyusw.com/lib/logos/techatnyu.png" alt="tech@nyu logo" class="uniheader__logo"/></a>
+			<a href="http://www.techatnyu.org" class="uniheader__homelink"><img src="http://nyusw.com/lib/logos/techatnyu.png" alt="tech@nyu logo" class="uniheader__logo"/></a>
 			<h1 class="uniheader__title">// 
 				{% if page.specialmsg %}
-					<span class="uniheader--special">{!} <a href="{{page.speciallink}}">{{page.specialmsg}}</a></span>
+					<span class="uniheader__special">{!} <a href="{{page.speciallink}}" class="uniheader__special-link">{{page.specialmsg}}</a></span>
 				{% else %}
 					{{page.title}}
 				{% endif %}
 			</h1>
 		</div>
 		<div class="uniheader__meta">
+			<a href="http://rsvp.techatnyu.org" class="universal__button">RSVP to Events</a>
+			<input class="uniheader__newslettersub" type="text" placeholder="Subscribe to the Tech@NYU Newsletter">
 			<a href="#" id="uniheaderSecondary">
 				<svg version="1.1" id="Capa_1" class="uniheader__calendar-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="595.28px" height="841.89px" viewBox="0 0 595.28 841.89" enable-background="new 0 0 595.28 841.89" xml:space="preserve">
 					<path class="calendar" fill="#010002" d="M156.47,628.632h12.115v-43.388h75.09v43.388h12.135v-43.388h78.632v43.388h12.155v-43.388h83.661v43.388 h12.114v-43.388h69.572V573.15h-69.572v-78.612h69.572v-12.135h-69.572v-71.649h69.572V398.66h-69.572v-48.397h-12.114v48.397 h-83.661v-48.397h-12.155v48.397h-78.632v-48.397h-12.135v48.397h-75.11v-48.397H156.47v48.397h-80.18v12.094h80.18v71.649h-80.18 v12.135h80.18v78.612h-80.18v12.094h80.18V628.632z M255.789,573.15v-78.612h78.632v78.612H255.789z M430.258,573.15h-83.661 v-78.612h83.661V573.15z M430.258,410.755v71.649h-83.661v-71.649C346.597,410.775,430.258,410.775,430.258,410.755z M334.442,410.755v71.649h-78.632v-71.649C255.809,410.775,334.442,410.775,334.442,410.755z M168.565,410.755h75.09v71.649 h-75.09V410.755z M168.565,494.538h75.09v78.612h-75.09V494.538z"/>
@@ -118,31 +161,33 @@ colors: https://app.frontify.com/d/MlLYiAFc3BzO/tech-nyu-style-guide#/basics/col
 		<section class="uh-secondary__information universal-section--primary">
 			<div class="uh-secondary__about">
 				<h1>About tech@NYU</h1>
-				<blockquote>We are NYC’s largest student-run organization of hackers, designers and builders. We host events that unite students and help them make stuff.</blockquote>
+				<blockquote class="universal__copy">We are NYC’s largest student-run organization of hackers, designers and builders. We host events that unite students and help them make stuff.</blockquote>
 
 				<p>We have over 9000 events.</p>
 
-				<input type="text">
+				
 
 				<!-- <p>Founding member of Tech Collab NYC</p> -->
 			</div>
 			<div class="uh-secondary__latest-job">
-			<h1>Community Impact Technology Fellowship - Urban Justice center</h1>
-			<blockquote>New York City is known for its iconic hot dog stands and food trucks, yet most street vendors face difficult economic circumstances and a complex web of city regulations that are often arbitrarily policed, related to streets that are closed at specific times to specific types of vendors.</blockquote>
+			<h2>Community Impact Technology Fellowship - Urban Justice center</h2>
+			<p>New York City is known for its iconic hot dog stands and food trucks, yet most street vendors face difficult economic circumstances and a complex web of city regulations that are often arbitrarily policed, related to streets that are closed at specific times to specific types of vendors.</p>
 			<ul>
 				<li>50 active jobs</li>
 				<li>Whatever</li>
 			</ul>
-			<button>http://jobsatnyu.com/</button>
+			<a class="universal__button" href="http://jobsatnyu.com/">Jobs Board</a>
 			</div>
 		</section>
 		<section class="uh-secondary__events universal-section--secondary">
 			<div class="uh-secondary__minical">
-				<h1>Temporary Mini Calendar</h1>
+				<h1 class="tempCAL">Temporary Mini Calendar</h1>
+
+				<a href="http://cal.techatnyu.org" class="universal__button">See all Tech@NYU Events</a>
 			</div>
 			<div class="uh-secondary__latest-event">
 				<h1>After Hours</h1>
-				<blockquote>Co-sponsored with ACM. Come hack, eat pizza, and learn from others at After Hours!</blockquote>
+				<blockquote class="universal__copy">Co-sponsored with ACM. Come hack, eat pizza, and learn from others at After Hours!</blockquote>
 			</div>
 		</section>
 	</header>
