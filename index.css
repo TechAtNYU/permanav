@@ -11,7 +11,7 @@
 	width: 100%;
 	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;
 }
-input[type="text"] {
+input[type="text"], input[type="email"], input[type="submit"], button {
 	font-family: 'Inconsolata', Helvetica, Arial, Sans-Serif;
 }
 
@@ -42,6 +42,11 @@ input[type="text"] {
 	text-decoration: none;
 	background-color: #65408b; /* temp */
 	color: white;
+	transition: all 0.5s;
+}
+.universal__button:hover {
+	background-color: #d7552d;
+	cursor: pointer;
 }
 
 .sample__article {
